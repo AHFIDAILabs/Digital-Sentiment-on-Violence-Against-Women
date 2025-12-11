@@ -164,12 +164,117 @@ Analysis of 93 posts with Nigerian location tags shows overwhelmingly negative s
 
 # 5. Tech Stack
 
-twikit
-config planner
-facebook graph api
-pandas
-numpy
-regex
-datetime
-lxyuan/distilbert-base-multilingual-cased-sentiments-student for sentiment analysis
-j-hartmann/emotion-english-distilroberta-base for emotion detection
+twikit <br>
+config planner <br>
+facebook graph api <br>
+pandas <br>
+numpy <br>
+regex <br>
+datetime <br>
+lxyuan/distilbert-base-multilingual-cased-sentiments-student for sentiment analysis <br>
+j-hartmann/emotion-english-distilroberta-base for emotion detection <br>
+
+# 6. Project Structure
+
+```pgsql
+Gender-Based-Violence-Sentiment-Analysis/
+│
+├── README.md
+├── requirements.txt
+├── setup.py
+├── .gitignore
+│
+├── data/
+│   ├── raw/
+│   │   └── (Unprocessed datasets: scraped text, CSVs, JSON files)
+│   ├── interim/
+│   │   └── (Partially processed data)
+│   ├── cleaned/
+│   │   └── (Final cleaned datasets ready for modeling)
+│   └── external/
+│       └── (Data obtained from third-party sources)
+│
+├── notebooks/
+│   ├── 01_eda.ipynb
+│   ├── 02_preprocessing.ipynb
+│   ├── 03_feature_engineering.ipynb
+│   ├── 04_model_building.ipynb
+│   ├── 05_model_evaluation.ipynb
+│   └── 06_results_interpretation.ipynb
+│
+├── scripts/
+│   ├── scraping/
+│   │   ├── scrape_twitter.py
+│   │   ├── scrape_reddit.py
+│   │   └── scrape_websites.py
+│   ├── preprocessing/
+│   │   ├── text_cleaning.py
+│   │   ├── data_cleaner.py
+│   │   └── tokenizer.py
+│   ├── feature_engineering/
+│   │   ├── embeddings.py
+│   │   ├── vectorizers.py
+│   │   └── sentiment_features.py
+│   ├── modeling/
+│   │   ├── train_model.py
+│   │   ├── evaluate_model.py
+│   │   └── save_model.py
+│   └── utils/
+│       ├── helpers.py
+│       └── logger.py
+│
+├── src/
+│   ├── data/
+│   │   ├── load_data.py
+│   │   └── make_dataset.py
+│   ├── preprocessing/
+│   │   ├── clean_text.py
+│   │   └── normalize.py
+│   ├── features/
+│   │   └── build_features.py
+│   ├── models/
+│   │   ├── model_defs.py
+│   │   └── predict.py
+│   ├── evaluation/
+│   │   └── metrics.py
+│   └── visualization/
+│       └── plots.py
+│
+├── reports/
+│   ├── figures/
+│   │   └── (Graphs, charts, wordclouds, confusion matrices)
+│   ├── tables/
+│   │   └── (Summary stats, model comparison tables)
+│   └── final_report.md
+│
+├── docs/
+│   ├── project_overview.md
+│   ├── methodology.md
+│   ├── data_documentation.md
+│   ├── model_documentation.md
+│   └── api_documentation.md
+│
+├── deployment/
+│   ├── streamlit_app/
+│   │   ├── app.py
+│   │   ├── pages/
+│   │   └── assets/
+│   ├── flask_app/
+│   │   ├── app.py
+│   │   ├── routes/
+│   │   └── templates/
+│   ├── models/
+│   │   └── (Serialized models: .pkl, .pt, .h5)
+│   └── config/
+│       └── settings.yaml
+│
+├── tests/
+│   ├── test_data_loading.py
+│   ├── test_preprocessing.py
+│   ├── test_feature_engineering.py
+│   ├── test_model_training.py
+│   └── test_api.py
+│
+└── logs/
+    └── (Training logs, error logs, scraping logs)
+````
